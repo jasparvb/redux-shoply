@@ -4,14 +4,13 @@ import { ADD_ITEM, REMOVE_ITEM } from "./actionTypes";
 const INITIAL_STATE = {products: data.products, cart: {}};
 
 function rootReducer(state = INITIAL_STATE, action) {
+  const cartCopy = { ...state.cart };
   switch (action.type) {
     case ADD_ITEM:
-      const cartCopy = { ...state.cart };
       cartCopy[action.id] = (cartCopy[action.id] || 0) + 1;
       return { ...state, cart: cartCopy };
 
     case REMOVE_ITEM:
-      const cartCopy = { ...state.cart };
       if (!cartCopy[action.id]) {
         return state;
       }
