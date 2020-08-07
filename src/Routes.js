@@ -9,6 +9,7 @@ function Routes() {
     <Switch>
       <Route path="/" exact>
         <ProductList />
+        <Cart />
       </Route>
       <Route path="/products/:id" exact>
         <ProductDetails />
