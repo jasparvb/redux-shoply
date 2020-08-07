@@ -1,26 +1,26 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-
+import { addItem, removeItem } from './actions';
 
 function ProductButtons({id}) {
   const dispatch = useDispatch();
 
-  function removeItem() {
-    dispatch({type: "REMOVE_ITEM", id });
+  function removeCartItem() {
+    dispatch(removeItem(id));
   }
 
-  function addItem() {
-    dispatch({type: "ADD_ITEM", id});
+  function addCartItem() {
+    dispatch(addItem(id));
   };
   
   return (
     <div className="d-flex justify-content-between">
       <i
-        onClick={addItem}
+        onClick={addCartItem}
         className="CartIcon fas fa-cart-plus fa-2x text-success"
       />
       <i
-        onClick={removeItem}
+        onClick={removeCartItem}
         className="CartIcon fas fa-cart-arrow-down fa-2x text-danger"
       />
     </div>
