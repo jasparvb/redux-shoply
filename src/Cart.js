@@ -20,10 +20,10 @@ function Cart() {
     ));
 
     return itemRows.length === 0 ? (
-        <h2>No items in cart yet!</h2>
+        <h2 className="mt-3">No items in cart yet!</h2>
       ) : (
         <div className="Cart">
-            <h2>Your Cart</h2>
+            <h2 className="mt-3">Your Cart</h2>
             <table>
                 <thead>
                     <tr>
