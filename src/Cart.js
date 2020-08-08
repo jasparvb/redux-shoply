@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProductButtons from "./ProductButtons";
+import './Cart.css';
 
 function Cart() {
-    const { products, cart } = useSelector(state => state);
-    console.log(cart);
+    const { products, cart, cartTotal } = useSelector(state => state);
     const itemRows = Object.keys(cart).map(id => (
         <tr key={id}>
           <td className="text-center align-middle">
@@ -24,7 +24,7 @@ function Cart() {
       ) : (
         <div className="Cart">
             <h2 className="mt-3">Your Cart</h2>
-            <table>
+            <table className="Cart-table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -37,6 +37,7 @@ function Cart() {
                     {itemRows}
                 </tbody>
             </table>
+            <p className="my-3">Total: ${cartTotal}</p>
         </div>
     );
 }

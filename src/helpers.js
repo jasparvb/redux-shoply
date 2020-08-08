@@ -5,6 +5,6 @@ export function cartTotal(products, cart) {
       const quantity = cart[id] || 0;
       total += price * quantity;
     }
-    return total;
+    return total.toFixed(2);
 }
   
